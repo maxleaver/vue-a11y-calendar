@@ -1,7 +1,7 @@
 <div class="datepicker">
   <div class="datepicker__wrapper">
     <label :for="inputs.local" class="datepicker__label">{{ label }}</label>
-    <input :id="inputs.local" :name="inputs.local" type="text" class="datepicker__input" :value="selectedLocal" readonly>
+    <input :id="inputs.local" :name="inputs.local" type="text" class="datepicker__input" :value="selectedLocal">
     <svg class="datepicker__activate" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" role="button" @click="open" @keydown.space="open" @keydown.enter="open" tabindex="0">
       <title>Open Calendar</title>
       <path class="cls-1" d="M13,1V0H11V1H5V0H3V1H0V16H16V1Zm1,13H2V5H14Z"/>
