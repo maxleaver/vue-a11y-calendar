@@ -69,7 +69,7 @@
     "prismjs": "^1.8.1",
     "puppeteer": "^0.11.0",
     "sass-lint": "^1.11.1",
-    "sass-loader": "^6.0.6",
+    "sass-loader": "^7.0.3",
     "sinon-chai": "^2.14.0",
     "vue-prism-component": "^1.0.1",
     "vue-style-loader": "^3.0.3",
@@ -78,7 +78,7 @@
     "webpack-merge": "^4.1.0"
   },
   "peerDependencies": {
-    "sass-loader": "^6.0",
+    "sass-loader": "^7.0",
     "vue": "^2.4"
   }
 }
