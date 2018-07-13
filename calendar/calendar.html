@@ -1,35 +1,35 @@
-<div class="calendar" aria-label="Calendar" role="application" tabindex="-1">
+<div class="vue-a11y-calendar" aria-label="Calendar" role="application" tabindex="-1">
   <!-- Calendar Body -->
-  <table class="calendar__wrapper">
-    <thead class="calendar__head">
-      <tr class="calendar__weekdays">
-        <th class="calendar__weekday" v-for="day in days" :key="day.long">
+  <table class="vue-a11y-calendar__wrapper">
+    <thead class="vue-a11y-calendar__head">
+      <tr class="vue-a11y-calendar__weekdays">
+        <th class="vue-a11y-calendar__weekday" v-for="day in days" :key="day.long">
           <span :title="day.long">{{day.short}}</span>
         </th>
       </tr>
     </thead>
-    <tbody class="calendar__body" @keydown.left="calendarNav('prev', $event)" @keydown.right="calendarNav('next', $event)" @keydown.up="calendarNav('up', $event)" @keydown.down="calendarNav('down', $event)">
-      <tr class="calendar__week" v-for="(week, index) in calendar.days" @click="select" :key="'week--' + index">
-        <td :class="day.status ? `calendar__day--${day.status}` : 'calendar__day'" v-for="day in week" :key="day.string">
+    <tbody class="vue-a11y-calendar__body" @keydown.left="calendarNav('prev', $event)" @keydown.right="calendarNav('next', $event)" @keydown.up="calendarNav('up', $event)" @keydown.down="calendarNav('down', $event)">
+      <tr class="vue-a11y-calendar__week" v-for="(week, index) in calendar.days" @click="select" :key="'week--' + index">
+        <td :class="day.status ? `vue-a11y-calendar__day--${day.status}` : 'vue-a11y-calendar__day'" v-for="day in week" :key="day.string">
           <!-- Make only "active" or "1" focusable -->
-          <button :tabindex="day.focusable ? 0 : -1" class="calendar__link" :data-day="day.day" :data-month="day.month" :data-year="day.year" :ref="'calendar'" :aria-label="day.string"><span class="calendar__date">{{ day.dayString }}</span></button>
+          <button :tabindex="day.focusable ? 0 : -1" class="vue-a11y-calendar__link" :data-day="day.day" :data-month="day.month" :data-year="day.year" :ref="'calendar'" :aria-label="day.string"><span class="vue-a11y-calendar__date">{{ day.dayString }}</span></button>
         </td>
       </tr>
     </tbody>
   </table>
 
   <!-- Calendar Header -->
-  <div class="calendar__header">
+  <div class="vue-a11y-calendar__header">
     <!-- Previous Month -->
-    <button class="calendar__previous" :title="t(microcopy.previous)" @click="navigate('prev', $event)" :aria-controls="tableID">
-      <span class="calendar__nav">{{ t(microcopy.previous) }}</span>
+    <button class="vue-a11y-calendar__previous" :title="t(microcopy.previous)" @click="navigate('prev', $event)" :aria-controls="tableID">
+      <span class="vue-a11y-calendar__nav">{{ t(microcopy.previous) }}</span>
     </button>
     <!-- Next Month -->
-    <button class="calendar__next" :title="t(microcopy.next)" @click="navigate('next', $event)" :aria-controls="tableID">
-      <span class="calendar__nav">{{ t(microcopy.next) }}</span>
+    <button class="vue-a11y-calendar__next" :title="t(microcopy.next)" @click="navigate('next', $event)" :aria-controls="tableID">
+      <span class="vue-a11y-calendar__nav">{{ t(microcopy.next) }}</span>
     </button>
     <!-- Visual Calendar Month -->
-    <div :id="tableID" class="calendar__month" role="region" aria-live="polite" aria-atomic="true" aria-relevant="all">
+    <div :id="tableID" class="vue-a11y-calendar__month" role="region" aria-live="polite" aria-atomic="true" aria-relevant="all">
       {{ calendar.current.string }}
     </div>
   </div>

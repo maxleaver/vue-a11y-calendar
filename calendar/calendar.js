@@ -248,10 +248,10 @@ export default {
     setFocus(last, offset) {
       const items = Array.from(this.$refs.calendar);
       if (last) {
-        items.find(elem => elem.parentNode.classList.contains('calendar__day')).setAttribute('tabindex', -1);
+        items.find(elem => elem.parentNode.classList.contains('vue-a11y-calendar__day')).setAttribute('tabindex', -1);
         items.reverse();
       }
-      const itemIndex = items.findIndex(elem => elem.parentNode.classList.contains('calendar__day'));
+      const itemIndex = items.findIndex(elem => elem.parentNode.classList.contains('vue-a11y-calendar__day'));
       let item = items[itemIndex];
 
       if (offset) {
@@ -267,7 +267,7 @@ export default {
 
       e.preventDefault();
 
-      if (target.classList.contains('calendar__date')) {
+      if (target.classList.contains('vue-a11y-calendar__date')) {
         target = target.parentNode;
       }
       // Firefox/Safari need to be coerced into focusing the target element.

@@ -86,32 +86,32 @@ export default {
     open(e) {
       e.preventDefault();
       const { calendar: cal } = this.$children[0].$refs;
-      this.$el.querySelector('.datepicker__popup').setAttribute('data-state', 'open');
+      this.$el.querySelector('.vue-a11y-datepicker__popup').setAttribute('data-state', 'open');
       cal.find(elem => elem.getAttribute('tabindex') === '0').focus();
     },
     tabcapture(e) {
       const { target } = e;
       const { calendar: cal } = this.$children[0].$refs;
 
-      if (target.classList.contains('calendar__link') && e.shiftKey === true) {
-        const cancel = this.$el.querySelector('.datepicker__cancel');
+      if (target.classList.contains('vue-a11y-calendar__link') && e.shiftKey === true) {
+        const cancel = this.$el.querySelector('.vue-a11y-datepicker__cancel');
         e.preventDefault();
         cancel.focus();
-      } else if (target.classList.contains('datepicker__cancel') && e.shiftKey === false) {
+      } else if (target.classList.contains('vue-a11y-datepicker__cancel') && e.shiftKey === false) {
         const item = cal.find(elem => elem.getAttribute('tabindex') === '0');
         e.preventDefault();
         item.focus();
       }
     },
     cancel(e) {
-      this.$el.querySelector('.datepicker__activate').focus();
-      this.$el.querySelector('.datepicker__popup').setAttribute('data-state', 'closed');
+      this.$el.querySelector('.vue-a11y-datepicker__activate').focus();
+      this.$el.querySelector('.vue-a11y-datepicker__popup').setAttribute('data-state', 'closed');
 
       e.preventDefault();
     },
     select(target) {
-      this.$el.querySelector('.datepicker__popup').setAttribute('data-state', 'closed');
-      this.$el.querySelector('.datepicker__input').focus();
+      this.$el.querySelector('.vue-a11y-datepicker__popup').setAttribute('data-state', 'closed');
+      this.$el.querySelector('.vue-a11y-datepicker__input').focus();
 
       this.value.year = target.dataset.year;
       this.value.month = target.dataset.month;
