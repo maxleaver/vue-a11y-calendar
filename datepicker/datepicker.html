@@ -3,15 +3,21 @@
     <label :for="inputs.local" class="vue-a11y-datepicker__label">{{ label }}</label>
     <input :id="inputs.local" :name="inputs.local" type="text" class="vue-a11y-datepicker__input" :value="selectedLocal">
     <svg class="vue-a11y-datepicker__activate" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" role="button" @click="open" @keydown.space="open" @keydown.enter="open" tabindex="0">
-      <title>Open Calendar</title>
-      <path class="cls-1" d="M13,1V0H11V1H5V0H3V1H0V16H16V1Zm1,13H2V5H14Z"/>
-      <rect class="cls-1" x="4" y="7" width="2" height="2"/>
-      <rect class="cls-1" x="10" y="7" width="2" height="2"/>
-      <rect class="cls-1" x="7" y="7" width="2" height="2"/>
-      <rect class="cls-1" x="4" y="10" width="2" height="2"/>
-      <rect class="cls-1" x="10" y="10" width="2" height="2"/>
-      <rect class="cls-1" x="7" y="10" width="2" height="2"/>
-    </svg>
+      <title>Open datepicker calendar</title>
+      <g fill-rule="evenodd">
+        <path d="M7.125,22.875 L22.875,22.875 L22.875,10.5 L7.125,10.5 L7.125,22.875 Z M22.875,7.125 L21.75,7.125 L21.75,8.25 C21.75,8.871 21.247125,9.375 20.625,9.375 L19.5,9.375 C18.877875,9.375 18.375,8.871 18.375,8.25 L18.375,7.125 L11.625,7.125 L11.625,8.25 C11.625,8.871 11.122125,9.375 10.5,9.375 L9.375,9.375 C8.752875,9.375 8.25,8.871 8.25,8.25 L8.25,7.125 L7.125,7.125 C6.502875,7.125 6,7.629 6,8.25 L6,22.875 C6,23.496 6.502875,24 7.125,24 L22.875,24 C23.497125,24 24,23.496 24,22.875 L24,8.25 C24,7.629 23.497125,7.125 22.875,7.125 Z"/>
+        <path d="M9.8385 8.25C10.203 8.25 10.5 7.953 10.5 7.5885L10.5 6.6615C10.5 6.295875 10.203 6 9.8385 6 9.474 6 9.177 6.295875 9.177 6.6615L9.177 7.5885C9.177 7.953 9.474 8.25 9.8385 8.25M19.9635 8.25C20.328 8.25 20.625 7.953 20.625 7.5885L20.625 6.6615C20.625 6.295875 20.328 6 19.9635 6 19.599 6 19.302 6.295875 19.302 6.6615L19.302 7.5885C19.302 7.953 19.599 8.25 19.9635 8.25"/>
+        <polygon points="10.5 15 12.75 15 12.75 12.75 10.5 12.75"/>
+        <polygon points="17.25 15 19.5 15 19.5 12.75 17.25 12.75"/>
+        <polygon points="13.875 15 16.125 15 16.125 12.75 13.875 12.75"/>
+        <polygon points="10.5 18.375 12.75 18.375 12.75 16.125 10.5 16.125"/>
+        <polygon points="17.25 18.375 19.5 18.375 19.5 16.125 17.25 16.125"/>
+        <polygon points="13.875 18.375 16.125 18.375 16.125 16.125 13.875 16.125"/>
+        <polygon points="10.5 21.75 12.75 21.75 12.75 19.5 10.5 19.5"/>
+        <polygon points="17.25 21.75 19.5 21.75 19.5 19.5 17.25 19.5"/>
+        <polygon points="13.875 21.75 16.125 21.75 16.125 19.5 13.875 19.5"/>
+      </g>
+    </svg>    
     <input type="hidden" :name="inputs.day" :value="selectedDay">
     <input type="hidden" :name="inputs.month" :value="selectedMonth">
     <input type="hidden" :name="inputs.year" :value="selectedYear">
@@ -19,6 +25,11 @@
 
   <div class="vue-a11y-datepicker__popup" aria-label="Date Picker" role="application" @keydown.tab="tabcapture" @keydown.esc="cancel" tabindex="-1">
     <calendar class="vue-a11y-datepicker__calendar" @dateSelected="select" :locale="locale" :microcopy="microcopy"></calendar>
-    <button class="vue-a11y-datepicker__cancel" @click="cancel">Cancel</button>
+    <button class="vue-a11y-datepicker__cancel" @click="cancel">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+        <title>Close datepicker calendar</title>
+        <polygon fill-rule="evenodd" points="20.728 8 22.546 9.818 17.091 15.273 22.546 20.728 20.728 22.546 15.273 17.091 9.818 22.546 8 20.728 13.455 15.273 8 9.818 9.818 8 15.273 13.455"/>
+      </svg>
+    </button>
   </div>
 </div>

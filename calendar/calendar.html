@@ -22,11 +22,17 @@
   <div class="vue-a11y-calendar__header">
     <!-- Previous Month -->
     <button class="vue-a11y-calendar__previous" :title="t(microcopy.previous)" @click="navigate('prev', $event)" :aria-controls="tableID">
-      <span class="vue-a11y-calendar__nav">{{ t(microcopy.previous) }}</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+        <title>{{ t(microcopy.previous) }}</title>
+        <path d="M18.7774015,19.7207258 C19.3918809,20.2763394 19.4396011,21.2248873 18.8839874,21.8393667 C18.3283738,22.4538462 17.3798259,22.5015663 16.7653465,21.9459527 L10.1606451,15.9739672 C9.50201507,15.3784325 9.50201507,14.344275 10.1606451,13.7487403 L16.8273117,7.72072579 C17.4417912,7.16511215 18.390339,7.2128323 18.9459527,7.82731173 C19.5015663,8.44179117 19.4538462,9.39033903 18.8393667,9.94595267 L13.4031919,14.8613538 L18.7774015,19.7207258 Z"/>
+      </svg>        
     </button>
     <!-- Next Month -->
     <button class="vue-a11y-calendar__next" :title="t(microcopy.next)" @click="navigate('next', $event)" :aria-controls="tableID">
-      <span class="vue-a11y-calendar__nav">{{ t(microcopy.next) }}</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+        <title>{{ t(microcopy.next) }}</title>
+        <path d="M10.2226221,9.94595267 C9.60814267,9.39033903 9.56042252,8.44179117 10.1160362,7.82731173 C10.6716498,7.2128323 11.6201977,7.16511215 12.2346771,7.72072579 L18.8393785,13.6927112 C19.4980085,14.2882459 19.4980085,15.3224034 18.8393785,15.9179381 L12.1727119,21.9459527 C11.5582324,22.5015663 10.6096846,22.4538462 10.0540709,21.8393667 C9.49845728,21.2248873 9.54617743,20.2763394 10.1606569,19.7207258 L15.5968317,14.8053247 L10.2226221,9.94595267 Z"/>
+      </svg>
     </button>
     <!-- Visual Calendar Month -->
     <div :id="tableID" class="vue-a11y-calendar__month" role="region" aria-live="polite" aria-atomic="true" aria-relevant="all">
