@@ -1,7 +1,7 @@
 <div class="vue-a11y-datepicker">
   <div class="vue-a11y-datepicker__wrapper">
     <label :for="inputs.local" class="vue-a11y-datepicker__label">{{ label }}</label>
-    <input :id="inputs.local" :name="inputs.local" type="text" class="vue-a11y-datepicker__input" :value="selectedLocal">
+    <input :id="inputs.local" :name="inputs.local" :placeholder="placeholder" type="text" class="vue-a11y-datepicker__input" :value="selectedLocal">
     <svg class="vue-a11y-datepicker__activate" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" role="button" @click="open" @keydown.space="open" @keydown.enter="open" tabindex="0">
       <title>Open datepicker calendar</title>
       <g fill-rule="evenodd">

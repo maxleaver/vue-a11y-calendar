@@ -62,6 +62,11 @@ export default {
         return true;
       },
     },
+    placeholder: {
+      type: String,
+      default: '',
+      required: false,
+    },
     value: {
       type: Object,
       default() {
